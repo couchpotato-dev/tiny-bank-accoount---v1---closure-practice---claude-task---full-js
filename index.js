@@ -134,34 +134,4 @@ function makeAccount(name) {
   };
 }
 
-function chooseRandomAmount() {
-  return Math.floor(Math.random() * 1e4);
-}
 
-const accounts = ["David", "Amy"];
-
-const length = Math.floor(Math.random() * Math.floor(Math.random() * 1e5));
-
-console.log("length:", length);
-console.log("Program will begin in 5 seconds...");
-
-setTimeout(() => {
-  accounts.forEach((account) => {
-    console.log("=".repeat(process.stdout.columns));
-    console.log(`\n${account}'s Account:\n`);
-    console.log("=".repeat(process.stdout.columns));
-    const target = makeAccount(account);
-
-    Array.from({ length }, () => 0).map(() => {
-      target.getBalance();
-      target[["withdraw", "deposite"][Math.floor(Math.random() * 2)]](
-        chooseRandomAmount(),
-      );
-      target.getBalance();
-    });
-
-    console.log("\n");
-    target.getHistory();
-    console.log("=".repeat(process.stdout.columns));
-  });
-}, 5000);
