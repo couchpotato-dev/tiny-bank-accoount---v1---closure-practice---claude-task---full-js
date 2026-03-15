@@ -1,1 +1,1 @@
-# tiny-bank-accoount---v1---closure-practice---claude-task---full-js
+# tiny-bank-account---by-me
